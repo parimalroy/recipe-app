@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './../layout.css';
 
 const Recipes =()=>{
@@ -16,7 +16,9 @@ const Recipes =()=>{
                 console.log(err)
             }
         }      
-   
+    useEffect(()=>{
+        getRecipes()
+    },[])
 
     const handleSubmit =(e)=>{
         e.preventDefault()
@@ -30,7 +32,7 @@ const Recipes =()=>{
     return(
         <>
         <div className="main container">
-            <h2 className="text-white pt-3 mb-4">Recipe PlaZa</h2> <hr className="hr-line"/>
+            <h2 className="text-white pt-3 mb-4">Recipe PlaZa Online</h2> <hr className="hr-line"/>
            <div className="row mb-5">
                <div className="col-12 searchArea">
                     <nav className="navbar navbar-light justify-content-center">
