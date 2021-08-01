@@ -1,0 +1,31 @@
+.main{
+    background-color: #FA983A;
+    min-height: 100vh;
+}
+
+.hr-line{
+    border-bottom: 2px solid #FFCA2C;
+}
+
+.searchBox{
+    border-radius: 20px;
+}
+
+.searchBtn{
+    border-radius: 20px;
+}
+select{
+    border-radius: 5px;
+}
+
+
+
+/* Card css */
+.card{
+    background-color: white;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
