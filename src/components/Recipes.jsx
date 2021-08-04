@@ -10,7 +10,6 @@ const Recipes =()=>{
 
                 let result = await response.json()
                 setRecipe(result.hits)
-                //console.log(result.hits)
             }
             catch(err){
                 console.log(err)
@@ -32,7 +31,7 @@ const Recipes =()=>{
     return(
         <>
         <div className="main container">
-            <h2 className="text-white pt-3 mb-4">Recipe PlaZa Online</h2> <hr className="hr-line"/>
+            <h1 className="text-white pt-3 mb-4 head">OnLinE ReciPe PlaZa</h1> <hr className="hr-line"/>
            <div className="row mb-5">
                <div className="col-12 searchArea">
                     <nav className="navbar navbar-light justify-content-center">
@@ -47,13 +46,7 @@ const Recipes =()=>{
                                 <button
                                  className="btn btn-warning searchBtn" type="submit">Search</button>
                             </div>
-                            {/* <label for="sel1" className="p-2 text-white">Select list: </label>
-                            <select id="sel1">
-                                <option>Rice</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select> */}
+                           
                         </form>
                     </nav>
                </div>
@@ -62,28 +55,18 @@ const Recipes =()=>{
            <div className="row d-flex justify-content-center">
               {
                   recipe.map((item,index)=>{
+                      const {image, label, url}=item.recipe
                       return(
-                          item.recipe.image.match(/\(jpeg|jpg|gif|png $/)) !=null &&(
-                        <div className="col-lg-3 col-md-4 col-sm-12 col-12 m-1 card" onClick={()=>{window.open(item.recipe.url)}}>
-                           <img className="rounded mx-auto d-block pt-3" src={item.recipe.image} />
-                            <p className="pt-2">{item.recipe.label}</p>
+                          image.match(/\(jpeg|jpg|gif|png $/)) !=null &&(
+                        <div className="col-lg-3 col-md-4 col-sm-12 col-12 m-1 card" onClick={()=>{window.open(url)}}>
+                           <img className="rounded mx-auto d-block pt-3" src={image} />
+                            <p className="pt-2">{label}</p>
                             <a href={item.recipe.url}></a>
                          </div>
                       )
                   })
               }
-               {/* <div className="col-lg-4 col-md-4 col-sm-12 col-12">
-                    <p>Image</p>
-                    <h2>label</h2>
-                    <p>link</p>
-               </div>
-
-               <div className="col-lg-4 col-md-4 col-sm-12 col-12">
-                    <p>Image</p>
-                    <h2>label</h2>
-                    <p>link</p>
-               </div> */}
-
+              
 
            </div>
         </div>

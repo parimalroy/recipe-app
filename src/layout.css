@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 .main{
     background-color: #FA983A;
     min-height: 100vh;
@@ -18,11 +19,18 @@ select{
     border-radius: 5px;
 }
 
-
+.head{
+    font-family: 'Stylish', sans-serif;
+}
 
 /* Card css */
 .card{
     background-color: white;
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: thistle;
 }
 
 img{
